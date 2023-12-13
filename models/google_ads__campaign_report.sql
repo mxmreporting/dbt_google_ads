@@ -1,4 +1,10 @@
-{{ config(enabled=var('ad_reporting__google_ads_enabled', True)) }}
+{{ config(enabled=var('ad_reporting__google_ads_enabled', True),
+    unique_key = ['source_relation','campaign_id','advertising_channel_type','advertising_channel_subtype','date_day'],
+    partition_by={
+      "field": "date_day",
+      "data_type": "date"
+    }
+    ) }}
 
 with stats as (
 
