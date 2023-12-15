@@ -2,7 +2,8 @@
     unique_key = ['source_relation','campaign_id','advertising_channel_type','advertising_channel_subtype','date_day'],
     partition_by={
       "field": "date_day",
-      "data_type": "date"
+      "data_type": "date",
+      "granularity": "day"
     }
     ) }}
 
