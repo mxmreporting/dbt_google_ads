@@ -2,7 +2,8 @@
     unique_key = ['source_relation','ad_group_id','date_day'],
     partition_by={
       "field": "date_day",
-      "data_type": "date"
+      "data_type": "date",
+    "granularity": "day"
     }
     ) }}
 
