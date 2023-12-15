@@ -1,3 +1,4 @@
 packages:
-- git: "https://github.com/mxmreporting/dbt_google_ads_source.git"     
-  revision: "main"
+
+  - git: "https://github.com/mxmreporting/dbt_google_ads_source.git"     
+    revision: "main"
