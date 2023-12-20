@@ -1,4 +1,5 @@
 {{ config(enabled=var('ad_reporting__google_ads_enabled', True),
+    materialized='incremental',
     unique_key = ['source_relation','ad_id','ad_group_id','date_day'],
    partition_by={
       "field": "date_day",
