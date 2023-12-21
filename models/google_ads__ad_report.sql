@@ -90,6 +90,6 @@ where DATE(date_day) >= DATE_ADD(CURRENT_DATE(), INTERVAL -2 YEAR)
 {% if is_incremental() %}
 
 
-  AND date_day >= (select DATE_ADD(CURRENT_DATE(), INTERVAL -3 DAY) from {{ this }})
+ AND date_day >= (select DATE_ADD(max(date_day), INTERVAL -3 DAY) from {{ this }})
 
 {% endif %}
