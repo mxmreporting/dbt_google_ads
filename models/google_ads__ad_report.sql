@@ -1,5 +1,4 @@
 {{ config(enabled=var('ad_reporting__google_ads_enabled', True),
-    materialized='incremental',
     unique_key = ['source_relation','ad_id','ad_group_id','date_day'],
    partition_by={
       "field": "date_day",
@@ -86,10 +85,3 @@ fields as (
 select *
 from fields
 
-
-{% if is_incremental() %}
-
-
- WHERE date_day >= (select DATE_ADD(max(date_day), INTERVAL -3 DAY) from {{ this }})
-
-{% endif %}
