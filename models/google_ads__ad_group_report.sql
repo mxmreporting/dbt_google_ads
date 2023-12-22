@@ -69,4 +69,3 @@ fields as (
 
 select *
 from fields
-where DATE(date_day) >= DATE_ADD(CURRENT_DATE(), INTERVAL -2 YEAR)
